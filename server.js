@@ -18,13 +18,11 @@ app.use('/', Router);
 const PORT = process.env.PORT || 8080;
 const USERNAME = process.env.DB_USERNAME;
 const PASSWORD = process.env.DB_PASSWORD;
-const URL= process.env.MONGODB_URI || `mongodb+srv://${USERNAME}:${PASSWORD}@flipkart-db.ng7etow.mongodb.net/ecommerce?retryWrites=true&w=majority`
+const URL= `mongodb+srv://${USERNAME}:${PASSWORD}@flipkart-db.ng7etow.mongodb.net/ecommerce?retryWrites=true&w=majority`
 
 
 Connection(URL);
-if(process.env.NODE_ENV === 'production'){
-    app.use(Express.static('client/build'))
-}
+
 app.listen(PORT, console.log("server runs successfully"))
 
 DefaultData();
