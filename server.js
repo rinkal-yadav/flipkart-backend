@@ -22,9 +22,9 @@ const URL= process.env.MONGODB_URI || `mongodb+srv://${USERNAME}:${PASSWORD}@fli
 
 
 Connection(URL);
-// if(process.env.NODE_ENV === 'production'){
-//     app.use(Express.static('client/build'))
-// }
+if(process.env.NODE_ENV === 'production'){
+    app.use(Express.static('client/build'))
+}
 app.listen(PORT, console.log("server runs successfully"))
 
 DefaultData();
